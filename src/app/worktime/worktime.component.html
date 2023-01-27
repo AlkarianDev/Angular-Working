@@ -1,0 +1,73 @@
+<p>worktime works!</p>
+
+<!-- Main Tab to Create time record  -->
+<div class="mainp">
+  <p-panel header="Ajouter le temps">
+    <div class="container">
+      <div class="mainp-label-encodage"><label>Date:</label></div>
+      <div class="mainp-label-encodage"><label>Temps sur chantier:</label></div>
+      <div class="mainp-label-encodage"><label>Chantier:<p-dropdown [options]="chantiers" [(ngModel)]="selectedChantier" optionLabel="name"></p-dropdown></label></div>
+      <div class="mainp-label-encodage"><label>Temps sur chantier:</label></div>
+    </div>
+  </p-panel>
+</div>
+
+
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #Form="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="modelTime.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"class="alert alert-danger">  Time Name is required </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="modelTime.name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Nom Chantier</label>
+        <select class="form-control" id="name" required
+                [(ngModel)]="modelChantier.name" name="Chantier"
+                #power="ngModel">
+          <option *ngFor="let chantier of chantiers" [value]="name">{{ chantier.name }}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!Form.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newChantier(); newTime() ;Form.reset()">New Hero</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Time NAME</div>
+      <div class="col-xs-9">{{ modelTime.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Time DATE</div>
+      <div class="col-xs-9">{{ modelTime.date }}</div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-3">Chantier Name</div>
+      <div class="col-xs-9">{{ modelChantier.name }}</div>
+    </div>
+
+
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>-->
+
+<!-- Pass into input-->
+
+<app-worktime-list [times]="times"></app-worktime-list>

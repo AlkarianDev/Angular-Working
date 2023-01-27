@@ -1,0 +1,18 @@
+<div class="mainp" *ngFor="let time of times">
+  <p-panel header="Times {{time.date}}" >
+  <table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>date</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{time.id}}</td>
+            <td>{{time.name}}</td>
+            <td>{{time.date}}</td>
+        </tr>
+    </tbody>
+  </table>
+</p-panel>
+</div>
