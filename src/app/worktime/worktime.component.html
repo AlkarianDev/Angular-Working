@@ -30,9 +30,7 @@
 
       <div class="form-group">
         <label for="power">Nom Chantier</label>
-        <select class="form-control" id="name" required
-                [(ngModel)]="modelChantier.name" name="Chantier"
-                #power="ngModel">
+        <select class="form-control" id="name" required [(ngModel)]="modelChantier.name" name="Chantier" #power="ngModel">
           <option *ngFor="let chantier of chantiers" [value]="name">{{ chantier.name }}</option>
         </select>
         <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
@@ -44,6 +42,12 @@
       <button type="button" class="btn btn-default" (click)="newChantier(); newTime() ;Form.reset()">New Hero</button>
     </form>
   </div>
+
+
+
+
+
+
 
   <div [hidden]="!submitted">
     <h2>You submitted the following:</h2>
