@@ -1,10 +1,7 @@
 export class Time {
-
-  constructor(
+  constructor(// to delete or update
   public id: number,
   public name: string,
   public date: string
   ) {}
-
-
 }
