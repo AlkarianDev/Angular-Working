@@ -18,31 +18,31 @@
     <div class="container">
 
         <h1>Ajouter Temps</h1>
-        <form [formGroup]="profileForm">
-          <div class="form-group">
+        <form [formGroup]="profileForm" class="row">
+          <div class="form-group col-2">
             <label for="Temps de Debut">Temps de Debut</label>
             <input type="Time" class="form-control" id="startTime" name="StartTime" formControlName="startTime" value="11:00 PM">
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-2">
             <label for="Temps de Fin">Temps de Fin</label>
             <input type="Time" class="form-control" id="endTime" name="EndTime" formControlName="endTime">
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-2">
             <label for="Date">Date Prestation</label>
             <input type="date" class="form-control" id="date" name="Date" formControlName="date" value="Date.now()">
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-2">
             <label for="Chantier">Chantier</label>
             <select class="form-control" id="chantier" name="Chantier" formControlName="chantier" >
               <option *ngFor="let chantier of chantiers">{{ chantier.name }}</option>
             </select>
           </div>
 
-          <button [formGroup]="profileForm" type="submit" class="btn btn-success" (click)="OnSubmit()">Submit</button>
-          <!--<button type="button" class="btn btn-default" (click)="OnSubmit() ;Form.reset()">Reset</button>-->
+          <button [formGroup]="profileForm" type="submit" class="btn btn-success col-1" (click)="OnSubmit()">Submit</button>
+          <button type="button" class="btn btn-danger col-1" (click)="OnSubmit()">Reset</button>
         </form>
     </div>
   </p-panel>

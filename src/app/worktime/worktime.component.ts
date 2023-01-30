@@ -63,7 +63,12 @@ export class WorktimeComponent {
       this.profileForm.value.date,
       new Chantier(this.profileForm.value.chantier) //
       )
-
+      console.log(this.profileForm.value.startTime);
+      //const timestartcalc = (this.profileForm.value.startTime).;
+      const timeendcalc = Number(this.profileForm.value.endTime);
+      //console.log(timestartcalc);
+      //const resultTime = (timeendcalc)-(timestartcalc);
+      //console.log(resultTime)
       console.log(result);
   }
 
