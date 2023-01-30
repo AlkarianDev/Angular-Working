@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WorktimeComponent } from './worktime/worktime.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from 'primeng/api';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PanelModule } from 'primeng/panel';
 import { WorktimeListComponent } from './worktime/worktime-list/worktime-list.component';
 import { WorktimeEditComponent } from './worktime/worktime-edit/worktime-edit.component';
@@ -27,6 +27,7 @@ import {DropdownModule} from 'primeng/dropdown';
     FormsModule,
     PanelModule,
     DropdownModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

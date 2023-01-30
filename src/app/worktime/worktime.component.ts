@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import {PanelModule} from 'primeng/panel';
 import { Chantier } from '../models/chantier.model';
+import { NewTimeEnter } from '../models/NewTimeEnter.model';
 import { Time } from '../models/time.model';
 
 
@@ -32,28 +34,29 @@ export class WorktimeComponent {
     {id: 4, name:'test 4'}
   ];
 
+  profileForm = new FormGroup({
+    startTime: new FormControl(),
+    endTime: new FormControl(),
+    date: new FormControl(),
+    chantier: new FormControl(),
+  });
 
 
+  OnSubmit() {
+    //console.log('works good');
+//console.log(Form.value)
+    //console.log(this.profileForm)
+//    window.location.reload();
 
-  modelTime = new Time(10, 'df', 'ds');
+    const result = new NewTimeEnter(
+      this.profileForm.value.startTime,
+      this.profileForm.value.endTime,
+      this.profileForm.value.date,
+      new Chantier(this.profileForm.value.chantier) //
+      )
 
-  modelChantier = new Chantier(10, 'sss');
-
-  submitted = false;
-
-  onSubmit() {
-    this.submitted = true;
+      console.log(result);
   }
-
-  newChantier() {
-    this.modelChantier = new Chantier(0,'');
-  }
-
-  newTime() {
-    this.modelTime = new Time(0, '', '');
-  }
-
-
 
 
 }

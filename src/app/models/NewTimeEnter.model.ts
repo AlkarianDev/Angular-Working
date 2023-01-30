@@ -1,9 +1,11 @@
+import { Time } from "@angular/common";
 import { Chantier } from "./chantier.model";
 
 export class NewTimeEnter {
 
   constructor(
-  public id: number,
+    //deprecated
+  //public id: number,
   // Add time in hours start end with calc version ?
   // Could be nice
   // Easy Version put only hours
@@ -11,15 +13,16 @@ export class NewTimeEnter {
 
 
   // Delete Name as not needed.
-  public name: string,
+  public startTime: Time,
+  public endTime: Time,
 
   //date should be retrive // for now it is hard code.
   public date: string,
   //Comment peut etre optionel !
-  public comment: string,
+  //public comment: string,
 
   // Il faudra prevoir des truc generique pas
-  chantier: Chantier
+  public chantier: Chantier
 
   ) {}
 
