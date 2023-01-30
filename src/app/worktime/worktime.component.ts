@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
@@ -17,7 +18,13 @@ import { Time } from '../models/time.model';
 
 export class WorktimeComponent {
 
+  constructor() {
 
+  }
+
+  NgOnInit() {
+
+  }
   selectedChantier: Chantier | undefined;
 
   times = [
@@ -34,12 +41,14 @@ export class WorktimeComponent {
     {id: 4, name:'test 4'}
   ];
 
+
   profileForm = new FormGroup({
-    startTime: new FormControl(),
-    endTime: new FormControl(),
-    date: new FormControl(),
+    startTime: new FormControl('08:00'),
+    endTime: new FormControl('19:00'),
+    date: new FormControl((new Date()).toISOString().substring(0,10)),
     chantier: new FormControl(),
   });
+
 
 
   OnSubmit() {

@@ -13,11 +13,11 @@ export class NewTimeEnter {
 
 
   // Delete Name as not needed.
-  public startTime: Time,
-  public endTime: Time,
+  public startTime: any,
+  public endTime: any,
 
   //date should be retrive // for now it is hard code.
-  public date: string,
+  public date: any,
   //Comment peut etre optionel !
   //public comment: string,
 
